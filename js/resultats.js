@@ -220,7 +220,7 @@ const infoIcons = document.querySelectorAll('.info-icon');
 infoIcons.forEach(icon => {
     icon.addEventListener('click', () => {
         const sampleId = icon.getAttribute('data-sample');
-        const perfume = perfumeData[sampleId];
+        const perfume = perfumes[sampleId];
         
         if (perfume) {
             // Mettre à jour le contenu
