@@ -1,0 +1,553 @@
+/* ========================================
+   VARIABLES CSS - Palette de couleurs
+   ======================================== */
+:root {
+    --vert-sauge: #6B7455;
+    --creme: #F2EBE5;
+    --vieux-rose: #C97E87;
+    --rose-clair: #EFC4CB;
+    --blanc: #FFFFFF;
+    --noir: #1A1A1A;
+    --gris-clair: #F5F5F5;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--creme);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--noir);
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+   ======================================== */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--creme);
+    animation: pageEnter 0.4s ease;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   SECTION HERO
+   ======================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('../img/accueil.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 40px;
+}
+
+/* Overlay sombre sur l'image */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+}
+
+/* Contenu du hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Logo blanc */
+.logo-blanc {
+    width: 120px;
+    height: auto;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Titre principal */
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--blanc);
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Bouton Commencer */
+.btn-commencer {
+    width: 60%;
+    max-width: 250px;
+    padding: 16px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--noir);
+    background-color: var(--rose-clair);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-commencer:hover {
+    background-color: #E5B5BD;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-commencer:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   SECTION SAVOIR-FAIRE
+   ======================================== */
+.savoir-faire-section {
+    padding: 40px 25px;
+    background: var(--creme);
+}
+
+/* Titre de section */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--noir);
+    margin-bottom: 25px;
+    text-align: left;
+    line-height: 110%;
+    letter-spacing: -0.04em;
+}
+
+/* Container d'image */
+.savoir-faire-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.sf-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ========================================
+   SECTION RÉSEAUX SOCIAUX
+   ======================================== */
+.social-section {
+    padding: 40px 25px;
+    background: var(--creme);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: var(--rose-clair);
+    width: 358px;
+    height: 111px;
+    margin: 0 auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 0;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: scale(1.05);
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: opacity(0.8);
+}
+
+/* ========================================
+   SECTION AVIS
+   ======================================== */
+.avis-section {
+    padding: 40px 25px 60px;
+    background: var(--creme);
+}
+
+/* Carrousel d'avis */
+.avis-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.avis-container {
+    position: relative;
+    width: 303px;
+    height: 367px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Card d'avis */
+.avis-card {
+    position: absolute;
+    top: 0;
+    left: 23px;
+    width: 303px;
+    height: 367px;
+    background: var(--blanc);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    opacity: 0;
+    transform: translateX(100%) scale(0.9);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    filter: blur(3px);
+}
+
+.avis-card.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    position: relative;
+    left: 0;
+    filter: blur(0);
+}
+
+.avis-card.prev {
+    transform: translateX(-100%) scale(0.9);
+    opacity: 0;
+    filter: blur(3px);
+}
+
+/* Header de l'avis */
+.avis-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.avis-date {
+    font-size: 13px;
+    color: var(--noir);
+    opacity: 0.6;
+}
+
+/* Auteur */
+.avis-author {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--noir);
+    margin-bottom: 8px;
+}
+
+/* Étoiles */
+.avis-stars {
+    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+/* Texte de l'avis */
+.avis-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--noir);
+    opacity: 0.9;
+}
+
+/* Flèches du carrousel */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 48px;
+    color: var(--noir);
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+    opacity: 0.5;
+}
+
+.carousel-arrow:hover {
+    opacity: 1;
+}
+
+.arrow-left {
+    left: -15px;
+}
+
+.arrow-right {
+    right: -15px;
+}
+
+/* Dots de pagination */
+.avis-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.avis-dot {
+    width: 40px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.avis-dot.active {
+    background: var(--noir);
+}
+
+/* Bouton Laisse ton avis */
+.btn-avis {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    max-width: 250px;
+    padding: 16px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--noir);
+    background-color: var(--rose-clair);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-avis:hover {
+    background-color: #E5B5BD;
+    transform: translateY(-2px);
+}
+
+.btn-avis:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   NAVBAR FIXE EN BAS
+   ======================================== */
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    height: 70px;
+    background: var(--vieux-rose);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 30px 15px;
+    z-index: 1000;
+    border-radius: 0;
+}
+
+/* Boutons de navigation */
+.nav-btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cercle rose derrière l'icône active */
+.nav-circle {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: #EFC4CB;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Cercle crème autour (effet de découpe) */
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    background: var(--creme);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+/* Icônes */
+.nav-btn img {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Icône inactive (blanche) visible par défaut */
+.nav-btn .icon-inactive {
+    opacity: 1;
+}
+
+/* Icône active (rose) cachée par défaut */
+.nav-btn .icon-active {
+    position: absolute;
+    opacity: 0;
+}
+
+/* ========================================
+   ÉTAT ACTIF DU BOUTON
+   ======================================== */
+.nav-btn.active {
+    transform: translateY(-25px);
+}
+
+.nav-btn.active .nav-circle {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-btn.active::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-btn.active .icon-inactive {
+    opacity: 0;
+}
+
+.nav-btn.active .icon-active {
+    opacity: 1;
+}
+
+/* Ajuster le padding en bas du contenu */
+.app-container {
+    padding-bottom: 110px;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLETTES & DESKTOP
+   ======================================== */
+@media (min-width: 768px) {
+    .hero-section {
+        height: 500px;
+    }
+
+    .logo-blanc {
+        width: 150px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - PETITS ÉCRANS
+   ======================================== */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+}

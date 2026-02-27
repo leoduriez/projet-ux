@@ -1,0 +1,374 @@
+/* ========================================
+   VARIABLES CSS - Palette de couleurs
+   ======================================== */
+:root {
+    --vert-sauge: #6B7455;
+    --creme: #F2EBE5;
+    --vieux-rose: #C97E87;
+    --blanc: #FFFFFF;
+    --noir: #1A1A1A;
+    --gris-clair: #F5F5F5;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--creme);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--noir);
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+   ======================================== */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    justify-content: space-between;
+}
+
+/* ========================================
+   HEADER & LOGO
+   ======================================== */
+.header {
+    padding: 30px 20px 20px;
+    text-align: center;
+    animation: fadeInDown 0.8s ease-out;
+    background-image: url('../img/degrader-header.png');
+    background-size: 393px 261px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 261px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    margin-top: 15px;
+}
+
+/* ========================================
+   CARROUSEL D'ONBOARDING
+   ======================================== */
+.onboarding-container {
+    position: relative;
+    width: 100%;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F5F2EE;
+    border-radius: 30px 30px 0 0;
+    padding: 30px 25px 25px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+
+/* Container de texte */
+.text-container {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+/* Carrousel d'images (Center Mode) */
+.image-carousel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+/* Images du carrousel */
+.carousel-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.carousel-image.active {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.carousel-image.prev {
+    opacity: 1;
+    left: 12%;
+    transform: translateX(-50%) scale(0.8);
+    z-index: 1;
+}
+
+.carousel-image.next {
+    opacity: 1;
+    left: 88%;
+    transform: translateX(-50%) scale(0.8);
+    z-index: 1;
+}
+
+/* Contenus texte des slides */
+.slide-text {
+    text-align: left;
+    display: none;
+}
+
+.slide-text.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Titres des slides */
+.slide-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--noir);
+    margin-bottom: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-align: left;
+}
+
+/* Descriptions des slides */
+.slide-description {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--noir);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    opacity: 0.8;
+    text-align: left;
+}
+
+.slide-description .highlight {
+    font-weight: 500;
+    color: var(--vert-sauge);
+}
+
+/* Images du carrousel */
+.main-image {
+    width: 171px;
+    height: 264px;
+    border-radius: 24px;
+    object-fit: cover;
+    background: var(--gris-clair);
+    transition: all 0.5s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-image.prev .main-image,
+.carousel-image.next .main-image {
+    filter: blur(3px);
+    opacity: 0.7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   INDICATEURS DE PROGRESSION (DOTS)
+   ======================================== */
+.dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    width: 32px;
+    border-radius: 4px;
+    background-color: var(--noir);
+}
+
+.dot:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   NAVIGATION - BOUTONS
+   ======================================== */
+/* Bouton "Passer" */
+.btn-skip {
+    width: 60%;
+    margin: 5px auto 0;
+    padding: 16px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--noir);
+    background-color: #EFC4CB;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    display: block;
+}
+
+.btn-skip:hover {
+    background-color: #E5B5BD;
+    transform: translateY(-2px);
+}
+
+.btn-skip:active {
+    transform: translateY(0);
+}
+
+/* Bouton "Commencer" */
+.btn-start {
+    width: 60%;
+    margin: 5px auto 0;
+    padding: 16px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--blanc);
+    background-color: var(--vert-sauge);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    display: block;
+}
+
+.btn-start:hover {
+    background-color: #5a6347;
+    transform: translateY(-2px);
+}
+
+.btn-start:active {
+    transform: translateY(-1px);
+}
+
+/* Classe pour cacher les éléments */
+.hidden {
+    display: none;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLETTES & DESKTOP
+   ======================================== */
+@media (min-width: 768px) {
+    .header {
+        padding: 60px 20px 40px;
+    }
+
+    .logo {
+        max-width: 220px;
+    }
+
+    .slide-title {
+        font-size: 42px;
+    }
+
+    .slide-description {
+        font-size: 18px;
+    }
+
+    .slide-image {
+        max-width: 400px;
+    }
+
+    .navigation {
+        padding: 30px 60px 60px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - PETITS ÉCRANS
+   ======================================== */
+@media (max-width: 375px) {
+    .slide-title {
+        font-size: 28px;
+    }
+
+    .slide-description {
+        font-size: 15px;
+    }
+
+    .slide-content {
+        padding: 0 20px;
+    }
+
+    .navigation {
+        padding: 20px 20px 30px;
+    }
+}

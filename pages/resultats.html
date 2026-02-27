@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCNT - Résultats</title>
+    
+    <!-- Google Fonts - Montserrat + Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="../css/resultats.css">
+</head>
+<body style="opacity: 0;">
+    <!-- Container principal de l'application -->
+    <div class="app-container">
+        
+        <!-- Header avec le logo -->
+        <header class="header">
+            <a href="accueil.html" class="logo-link">
+                <img src="../img/logo.png" alt="SCNT Logo" class="logo">
+            </a>
+            <h1 class="page-title">Résultats</h1>
+        </header>
+
+        <!-- Container des résultats -->
+        <div class="results-container">
+            
+            <!-- Section échantillons -->
+            <section class="samples-section">
+                <h2 class="section-title">Voici tes 3 échantillons !</h2>
+                
+                <div class="samples-grid">
+                    <!-- Échantillon 1 -->
+                    <div class="sample-card">
+                        <div class="sample-image">
+                            <img src="../img/resultat-1.png" alt="Fruité & Doux">
+                            <img src="../img/i.png" alt="Info" class="info-icon" data-sample="1">
+                        </div>
+                        <p class="sample-name">Fruité & Doux</p>
+                    </div>
+                    
+                    <!-- Échantillon 2 -->
+                    <div class="sample-card">
+                        <div class="sample-image">
+                            <img src="../img/resultat-2.png" alt="Frais & Pétillant">
+                            <img src="../img/i.png" alt="Info" class="info-icon" data-sample="2">
+                        </div>
+                        <p class="sample-name">Frais & Pétillant</p>
+                    </div>
+                    
+                    <!-- Échantillon 3 -->
+                    <div class="sample-card sample-center">
+                        <div class="sample-image">
+                            <img src="../img/resultat-3.png" alt="Ambré & Chaud">
+                            <img src="../img/i.png" alt="Info" class="info-icon" data-sample="3">
+                        </div>
+                        <p class="sample-name">Ambré & Chaud</p>
+                    </div>
+                </div>
+                
+                <button class="btn-commander">Commander</button>
+            </section>
+            
+            <!-- Section résumé des réponses -->
+            <section class="summary-section">
+                <h2 class="section-title">Résumé de tes réponses :</h2>
+                
+                <ul class="responses-list" id="responsesList">
+                    <!-- Les réponses seront injectées ici par JavaScript -->
+                </ul>
+            </section>
+            
+            <!-- Section recommencer -->
+            <section class="restart-section">
+                <p class="restart-text">Si tu le souhaites, tu peux recommencer ton questionnaire.</p>
+                <button class="btn-restart" id="btnRestart">Recommencer</button>
+            </section>
+            
+            <!-- Section coffrets -->
+            <section class="coffrets-section">
+                <h2 class="section-title">Découvre nos coffrets</h2>
+                
+                <div class="coffrets-carousel">
+                    <div class="coffret-card">
+                        <img src="../img/resultat-1.png" alt="Coffret 1">
+                    </div>
+                    <div class="coffret-card active">
+                        <img src="../img/resultat-2.png" alt="Coffret 2">
+                    </div>
+                    <div class="coffret-card">
+                        <img src="../img/resultat-3.png" alt="Coffret 3">
+                    </div>
+                </div>
+                
+                <button class="btn-explorer">Explorer</button>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- Pop-up détails parfum -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <h2 class="popup-title" id="popupTitle">Parfum : Fruité & doux</h2>
+            
+            <div class="popup-images" id="popupImages">
+                <!-- Images seront insérées ici par JavaScript -->
+            </div>
+            
+            <div class="popup-notes">
+                <h3>Note de tête :</h3>
+                <p id="noteHead">Fruité et gourmand → Pêche, fruits rouges, poire douce</p>
+                
+                <h3>Note de cœur :</h3>
+                <p id="noteHeart">Floral et élégant → Pétales de rose, jasmin doux, léger muguet</p>
+                
+                <h3>Note de fond :</h3>
+                <p id="noteBase">Doux et subtil → Vanille, ambre clair, musc blanc</p>
+            </div>
+            
+            <button class="btn-close-popup" id="btnClosePopup">Fermer</button>
+        </div>
+    </div>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="../js/resultats.js"></script>
+</body>
+</html>

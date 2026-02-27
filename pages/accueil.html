@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCNT - Accueil</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="../css/accueil.css">
+</head>
+<body style="opacity: 0;">
+    <!-- Container principal -->
+    <div class="app-container">
+        
+        <!-- Section Hero avec image de fond -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <!-- Logo blanc -->
+                <img src="../img/logo-blanc.png" alt="SCNT Logo" class="logo-blanc">
+                
+                <!-- Titre principal -->
+                <h1 class="hero-title">Fini les parfums trop communs, trouve enfin ta signature</h1>
+                
+                <!-- Bouton Commencer -->
+                <button class="btn-commencer">Commencer</button>
+            </div>
+        </section>
+
+        <!-- Section Notre savoir-faire -->
+        <section class="savoir-faire-section">
+            <h2 class="section-title">Notre savoir-faire</h2>
+            
+            <div class="savoir-faire-image">
+                <img src="../img/savoir-faire.png" alt="Notre savoir-faire" class="sf-image">
+            </div>
+        </section>
+
+        <!-- Section Réseaux Sociaux -->
+        <section class="social-section">
+            <h2 class="section-title">Suis-nous pour ne rien manquer</h2>
+            
+            <div class="social-buttons">
+                <a href="https://www.instagram.com" target="_blank" class="social-btn">
+                    <img src="../img/icon-insta.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" class="social-btn">
+                    <img src="../img/icon-tiktok.png" alt="TikTok" class="social-icon">
+                </a>
+            </div>
+        </section>
+
+        <!-- Section Avis -->
+        <section class="avis-section">
+            <h2 class="section-title">Vos avis</h2>
+            
+            <!-- Carrousel d'avis -->
+            <div class="avis-carousel">
+                <button class="carousel-arrow arrow-left" aria-label="Avis précédent">‹</button>
+                
+                <div class="avis-container">
+                    <!-- Avis 1 -->
+                    <div class="avis-card active" data-avis="0">
+                        <div class="avis-header">
+                            <p class="avis-date">Il y a 2 semaines</p>
+                        </div>
+                        <p class="avis-author">Camille, 21 ans</p>
+                        <div class="avis-stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <p class="avis-text">
+                            J'avais peur de commander un parfum sans le sentir, mais le concept de 3 échantillons est génial. Les questions étaient rapides et super faciles à comprendre. J'ai adoré 2 parfums sur les 3, ça m'a vraiment surprise. J'ai finalement choisi le plus boisé et je reçois plein de compliments depuis !
+                        </p>
+                    </div>
+
+                    <!-- Avis 2 -->
+                    <div class="avis-card" data-avis="1">
+                        <div class="avis-header">
+                            <p class="avis-date">Il y a 1 mois</p>
+                        </div>
+                        <p class="avis-author">Lucas, 24 ans</p>
+                        <div class="avis-stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <p class="avis-text">
+                            Franchement, l'expérience est hyper fluide. Le questionnaire est rapide et on sent que les propositions sont vraiment personnalisées. Ça change totalement des parfums classiques qu'on voit partout. J'ai enfin trouvé une odeur qui me correspond vraiment.
+                        </p>
+                    </div>
+
+                    <!-- Avis 3 -->
+                    <div class="avis-card" data-avis="2">
+                        <div class="avis-header">
+                            <p class="avis-date">Il y a 3 mois</p>
+                        </div>
+                        <p class="avis-author">Sarah, 19 ans</p>
+                        <div class="avis-stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                        <p class="avis-text">
+                            J'ai adoré pouvoir créer mon propre parfum. Le fait de tester les échantillons chez moi avant de choisir, ça rassure énormément. Mon parfum est devenu ma signature, il me ressemble à 100 %. Je recommande à fond.
+                        </p>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow arrow-right" aria-label="Avis suivant">›</button>
+            </div>
+
+            <!-- Indicateurs de pagination -->
+            <div class="avis-dots">
+                <span class="avis-dot active" data-dot="0"></span>
+                <span class="avis-dot" data-dot="1"></span>
+                <span class="avis-dot" data-dot="2"></span>
+            </div>
+
+            <!-- Bouton Laisse ton avis -->
+            <button class="btn-avis">Laisse ton avis</button>
+        </section>
+
+    </div>
+
+    <!-- Navigation Bar Fixe -->
+    <nav class="bottom-navbar">
+        <!-- Bouton Questionnaire -->
+        <button class="nav-btn" data-nav="questionnaire" aria-label="Questionnaire">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-questionnaire-B.png" alt="Questionnaire" class="icon-inactive">
+            <img src="../img/icon-questionnaire-R.png" alt="Questionnaire" class="icon-active">
+        </button>
+        
+        <!-- Bouton Accueil (actif par défaut) -->
+        <button class="nav-btn active" data-nav="accueil" aria-label="Accueil">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-maison-B.png" alt="Accueil" class="icon-inactive">
+            <img src="../img/icon-maison-R.png" alt="Accueil" class="icon-active">
+        </button>
+        
+        <!-- Bouton Profil -->
+        <button class="nav-btn" data-nav="profil" aria-label="Profil">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-conexion-B.png" alt="Profil" class="icon-inactive">
+            <img src="../img/icon-conexion-R.png" alt="Profil" class="icon-active">
+        </button>
+    </nav>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="../js/accueil.js"></script>
+</body>
+</html>

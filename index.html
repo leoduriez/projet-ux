@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCNT - Crée ton parfum personnalisé</title>
+    
+    <!-- Google Fonts - Montserrat pour le corps, Cormorant Garamond pour les titres -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Container principal de l'application -->
+    <div class="app-container">
+        
+        <!-- Header avec le logo -->
+        <header class="header">
+            <img src="img/logo.png" alt="SCNT Logo" class="logo">
+        </header>
+
+        <!-- Container du carrousel d'onboarding -->
+        <div class="onboarding-container">
+            
+            <!-- Contenus des slides (texte) -->
+            <div class="text-container">
+                <div class="slide-text active" data-slide="0">
+                    <h1 class="slide-title">Crée ton parfum personnalisé</h1>
+                    <p class="slide-description">
+                        Réponds à 8 questions pour révéler ton profil olfactif. 2 minutes suffisent.
+                    </p>
+                </div>
+                <div class="slide-text" data-slide="1">
+                    <h1 class="slide-title">Découvre tes 3 créations</h1>
+                    <p class="slide-description">
+                        Nous te proposons 3 parfums uniques, pensés spécialement pour toi.
+                    </p>
+                </div>
+                <div class="slide-text" data-slide="2">
+                    <h1 class="slide-title">Crée ton compte</h1>
+                    <p class="slide-description">
+                        En t'inscrivant, tu peux retrouver tes résultats, suivre tes commandes et sauvegarder tes créations.
+                    </p>
+                </div>
+                <div class="slide-text" data-slide="3">
+                    <h1 class="slide-title">Reçois tes échantillons</h1>
+                    <p class="slide-description">
+                        Commande tes 3 parfums personnalisés et teste-les chez toi avant de choisir ton favori.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Carrousel d'images (Center Mode) -->
+            <div class="image-carousel">
+                <div class="carousel-image active" data-image="0">
+                    <img src="img/onboarding-1.png" alt="Diagnostic olfactif" class="main-image">
+                </div>
+                <div class="carousel-image" data-image="1">
+                    <img src="img/onboarding-2.png" alt="Échantillons à domicile" class="main-image">
+                </div>
+                <div class="carousel-image" data-image="2">
+                    <img src="img/onboarding-3.png" alt="Parfum exclusif" class="main-image">
+                </div>
+                <div class="carousel-image" data-image="3">
+                    <img src="img/onboarding-4.png" alt="Expérience sensorielle" class="main-image">
+                </div>
+            </div>
+
+            <!-- Indicateurs de progression (dots) -->
+            <div class="dots-container">
+                <span class="dot active" data-dot="0"></span>
+                <span class="dot" data-dot="1"></span>
+                <span class="dot" data-dot="2"></span>
+                <span class="dot" data-dot="3"></span>
+            </div>
+
+            <!-- Bouton Passer -->
+            <button class="btn-skip">Passer</button>
+
+        </div>
+
+    </div>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

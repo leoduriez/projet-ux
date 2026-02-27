@@ -1,0 +1,598 @@
+/* ========================================
+   VARIABLES CSS
+   ======================================== */
+:root {
+    --vert-sauge: #A5B093;
+    --creme: #F0EBE3;
+    --vieux-rose: #C97E87;
+    --rose-clair: #EFC4CB;
+    --blanc: #FFFFFF;
+    --noir: #1A1A1A;
+    --gris-clair: #F5F5F5;
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--creme);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--noir);
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL
+   ======================================== */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    justify-content: space-between;
+    animation: pageEnter 0.4s ease;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.header {
+    padding: 30px 20px 20px;
+    text-align: center;
+    animation: fadeInDown 0.8s ease-out;
+    background-image: url('../img/degrader-header.png');
+    background-size: 393px 261px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 261px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-link {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    margin-top: 15px;
+}
+
+.page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 40px;
+    color: var(--noir);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* ========================================
+   CONTAINER PAIEMENT
+   ======================================== */
+.paiement-container {
+    position: relative;
+    width: 100%;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F5F2EE;
+    border-radius: 30px 30px 0 0;
+    padding: 30px 20px 120px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+
+/* ========================================
+   RÉCAPITULATIF
+   ======================================== */
+.recap-section {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.recap-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.recap-line.total {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.recap-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--noir);
+}
+
+.recap-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--noir);
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--noir);
+    margin-bottom: 20px;
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+/* ========================================
+   FORMULAIRE
+   ======================================== */
+.paiement-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    color: var(--noir);
+    top: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--noir);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: rgba(26, 26, 26, 0.5);
+}
+
+.form-input:focus {
+    border-bottom-color: var(--noir);
+}
+
+/* Input avec icône à droite */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon .form-input {
+    padding-right: 40px;
+}
+
+.input-icon {
+    position: absolute;
+    right: 0;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Ligne avec 2 champs côte à côte */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* ========================================
+   MÉTHODES DE PAIEMENT
+   ======================================== */
+.payment-methods {
+    display: flex;
+    align-items: center;
+    background: var(--blanc);
+    width: 358px;
+    height: 46px;
+    gap: 36px;
+    border-radius: 4px;
+    padding: 3px 26px;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method {
+    flex: 1;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+}
+
+.payment-separator {
+    width: 1px;
+    height: 25px;
+    background: #D0D0D0;
+    flex-shrink: 0;
+}
+
+.payment-icon {
+    height: 30px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+/* Icône normale visible par défaut */
+.payment-method .icon-normal {
+    opacity: 1;
+}
+
+/* Icône gras cachée par défaut */
+.payment-method .icon-bold {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Quand le bouton est actif */
+.payment-method.active .icon-normal {
+    opacity: 0;
+}
+
+.payment-method.active .icon-bold {
+    opacity: 1;
+}
+
+/* ========================================
+   SECTIONS DE PAIEMENT
+   ======================================== */
+.card-section,
+.paypal-section,
+.applepay-section {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--noir);
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(26, 26, 26, 0.6);
+    margin-bottom: 25px;
+}
+
+/* ========================================
+   BOUTON PAYER
+   ======================================== */
+.btn-payer {
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blanc);
+    background: #EFC4CB;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-payer:hover {
+    background: #E5B5BD;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-payer:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   NAVBAR FIXE EN BAS
+   ======================================== */
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    height: 70px;
+    background: var(--vieux-rose);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 30px 15px;
+    z-index: 1000;
+    border-radius: 0;
+}
+
+/* Boutons de navigation */
+.nav-btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cercle rose derrière l'icône active */
+.nav-circle {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: #EFC4CB;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Cercle crème autour (effet de découpe) */
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    background: var(--creme);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+/* Icônes */
+.nav-btn img {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Icône inactive (blanche) visible par défaut */
+.nav-btn .icon-inactive {
+    opacity: 1;
+}
+
+/* Icône active (rose) cachée par défaut */
+.nav-btn .icon-active {
+    position: absolute;
+    opacity: 0;
+}
+
+/* ========================================
+   ÉTAT ACTIF DU BOUTON
+   ======================================== */
+.nav-btn.active {
+    transform: translateY(-25px);
+}
+
+.nav-btn.active .nav-circle {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-btn.active::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.nav-btn.active .icon-inactive {
+    opacity: 0;
+}
+
+.nav-btn.active .icon-active {
+    opacity: 1;
+}
+
+/* ========================================
+   POPUP DE CONFIRMATION
+   ======================================== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: #F5F2EE;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.check-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.popup-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--noir);
+    margin: 0;
+}
+
+.popup-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--noir);
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.popup-order {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--noir);
+    margin: 25px 0;
+}
+
+.popup-email {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--noir);
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.popup-tracking {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--noir);
+    margin: 20px 0 30px;
+    line-height: 1.6;
+}
+
+.btn-popup {
+    width: 100%;
+    padding: 14px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blanc);
+    background: #EFC4CB;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-popup:hover {
+    background: #E5B5BD;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-popup:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

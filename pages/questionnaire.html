@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCNT - Questionnaire</title>
+    
+    <!-- Google Fonts - Montserrat + Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="../css/questionnaire.css">
+</head>
+<body style="opacity: 0;">
+    <!-- Container principal de l'application -->
+    <div class="app-container">
+        
+        <!-- Header avec le logo et titre -->
+        <header class="header">
+            <a href="accueil.html" class="logo-link">
+                <img src="../img/logo.png" alt="SCNT Logo" class="logo">
+            </a>
+            <h1 class="questionnaire-title">Questionnaire</h1>
+        </header>
+
+        <!-- Container du questionnaire -->
+        <div class="questionnaire-container">
+            
+            <!-- Indicateur de question -->
+            <p class="question-indicator" id="questionIndicator">Question <span id="currentQuestion">1</span> sur 8</p>
+
+            <!-- Barre de progression -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <!-- Container des questions -->
+            <div class="questions-container">
+                
+                <!-- Question 1 -->
+                <div class="question-card active" data-question="1">
+                    <h2 class="question-title">Ton style est plutôt :</h2>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q1" value="simple">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Simple et minimaliste</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q1" value="confortable">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Confortable et naturel</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q1" value="elegant">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Élégant et raffiné</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q1" value="audacieux">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Audacieux et original</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-card" data-question="2">
+                    <h2 class="question-title">Tu te sens mieux dans :</h2>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q2" value="propre">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Un espace propre et lumineux</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q2" value="cosy">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Un endroit cosy et chaleureux</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q2" value="anime">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Un lieu animé et festif</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q2" value="nature">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">En pleine nature</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-card" data-question="3">
+                    <h2 class="question-title">Ton parfum doit te faire sentir :</h2>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q3" value="confiant">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Confiant·e</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q3" value="sensuel">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Sensuel·le</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q3" value="apaise">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Apaisé·e</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q3" value="puissant">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Puissant·e</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q3" value="libre">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Libre</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-card" data-question="4">
+                    <h2 class="question-title">Tu veux que ton parfum :</h2>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q4" value="discret">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Soit discret</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q4" value="remarque">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Se remarque</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q4" value="intrigue">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Intrigue</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q4" value="rassure">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Rassure</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-card" data-question="5">
+                    <h2 class="question-title">Es-tu sensible aux odeurs fortes ?</h2>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q5" value="oui">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Oui</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q5" value="non">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Non</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q5" value="depend">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Ça dépend</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question-card" data-question="6">
+                    <h2 class="question-title">Première impression (note de tête) :</h2>
+                    <p class="question-subtitle">Quand on sent ton parfum pour la première fois, tu le préfères :</p>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q6" value="frais">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Frais et pétillant (agrumes, fraîcheur)</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q6" value="fruite">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Fruité et gourmand</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q6" value="vert">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Vert et naturel</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q6" value="propre">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Propre et léger</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q6" value="epice">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Légèrement épicé</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question-card" data-question="7">
+                    <h2 class="question-title">Cœur du parfum (note dominante) :</h2>
+                    <p class="question-subtitle">Il doit surtout être :</p>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q7" value="floral">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Floral et élégant</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q7" value="fruite">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Fruité et doux</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q7" value="aromatique">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Aromatique et naturel</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q7" value="epice">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Épicé et charismatique</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q7" value="propre">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Propre et réconfortant</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question-card" data-question="8">
+                    <h2 class="question-title">Signature finale (note de fond) :</h2>
+                    <p class="question-subtitle">Tu veux une base :</p>
+                    <div class="answers-list">
+                        <label class="answer-option">
+                            <input type="radio" name="q8" value="boisee">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Boisée et profonde</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q8" value="vanillee">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Vanillée et gourmande</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q8" value="musquee">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Musquée et sensuelle</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q8" value="ambree">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Ambrée et chaude</span>
+                        </label>
+                        <label class="answer-option">
+                            <input type="radio" name="q8" value="legere">
+                            <span class="checkbox"></span>
+                            <span class="answer-text">Légère et discrète</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Page Finalisation -->
+                <div class="question-card" data-question="final">
+                    <div class="finalisation-content">
+                        <p class="finalisation-title">Super !</p>
+                        <p class="finalisation-message">Tes 3 formules d'échantillons sont prêtes !</p>
+                        <p class="finalisation-message">Avant de les découvrir, voici un résumé de tes réponses.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Boutons Navigation -->
+            <div class="buttons-container">
+                <button class="btn-prev" id="btnPrev">Précédent</button>
+                <button class="btn-next" id="btnNext">Suivant</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar Fixe -->
+    <nav class="bottom-navbar">
+        <!-- Bouton Questionnaire -->
+        <button class="nav-btn active" data-nav="questionnaire" aria-label="Questionnaire">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-questionnaire-B.png" alt="Questionnaire" class="icon-inactive">
+            <img src="../img/icon-questionnaire-R.png" alt="Questionnaire" class="icon-active">
+        </button>
+        
+        <!-- Bouton Accueil -->
+        <button class="nav-btn" data-nav="accueil" aria-label="Accueil">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-maison-B.png" alt="Accueil" class="icon-inactive">
+            <img src="../img/icon-maison-R.png" alt="Accueil" class="icon-active">
+        </button>
+        
+        <!-- Bouton Profil -->
+        <button class="nav-btn" data-nav="profil" aria-label="Profil">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-conexion-B.png" alt="Profil" class="icon-inactive">
+            <img src="../img/icon-conexion-R.png" alt="Profil" class="icon-active">
+        </button>
+    </nav>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="../js/questionnaire.js"></script>
+</body>
+</html>

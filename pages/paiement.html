@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCNT - Paiement</title>
+    
+    <!-- Google Fonts - Montserrat + Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="../css/paiement.css">
+</head>
+<body style="opacity: 0;">
+    <!-- Container principal de l'application -->
+    <div class="app-container">
+        
+        <!-- Header avec le logo et titre -->
+        <header class="header">
+            <a href="accueil.html" class="logo-link">
+                <img src="../img/logo.png" alt="SCNT Logo" class="logo">
+            </a>
+            <h1 class="page-title">Paiement</h1>
+        </header>
+
+        <!-- Container du paiement -->
+        <div class="paiement-container">
+            
+            <!-- Récapitulatif -->
+            <div class="recap-section">
+                <div class="recap-line">
+                    <span class="recap-label">Sous-total</span>
+                    <span class="recap-value">65€</span>
+                </div>
+                <div class="recap-line">
+                    <span class="recap-label">TVA</span>
+                    <span class="recap-value">5€</span>
+                </div>
+                <div class="recap-line total">
+                    <span class="recap-label">Total</span>
+                    <span class="recap-value">70€</span>
+                </div>
+            </div>
+
+            <!-- Informations de livraison -->
+            <h2 class="section-title">Informations de livraison</h2>
+
+            <form class="paiement-form" id="paiementForm">
+                
+                <!-- Adresse -->
+                <div class="form-group">
+                    <label for="adresse" class="form-label">Adresse</label>
+                    <input type="text" id="adresse" name="adresse" class="form-input" placeholder="1 rue de la route" required>
+                </div>
+
+                <!-- Ville -->
+                <div class="form-group">
+                    <label for="ville" class="form-label">Ville</label>
+                    <input type="text" id="ville" name="ville" class="form-input" placeholder="Lorient" required>
+                </div>
+
+                <!-- Code postal -->
+                <div class="form-group">
+                    <label for="codePostal" class="form-label">Code postal</label>
+                    <input type="text" id="codePostal" name="codePostal" class="form-input" placeholder="12345" required>
+                </div>
+
+                <!-- Méthode de paiement -->
+                <h2 class="section-title">Méthode de paiement</h2>
+
+                <div class="payment-methods">
+                    <button type="button" class="payment-method active" data-method="visa">
+                        <img src="../img/visa.png" alt="Visa" class="payment-icon icon-normal">
+                        <img src="../img/visa-G.png" alt="Visa" class="payment-icon icon-bold">
+                    </button>
+                    <div class="payment-separator"></div>
+                    <button type="button" class="payment-method" data-method="paypal">
+                        <img src="../img/paypal.png" alt="PayPal" class="payment-icon icon-normal">
+                        <img src="../img/paypal-G.png" alt="PayPal" class="payment-icon icon-bold">
+                    </button>
+                    <div class="payment-separator"></div>
+                    <button type="button" class="payment-method" data-method="applepay">
+                        <img src="../img/apple-pay.png" alt="Apple Pay" class="payment-icon icon-normal">
+                        <img src="../img/apple-pay-G.png" alt="Apple Pay" class="payment-icon icon-bold">
+                    </button>
+                </div>
+
+                <!-- Carte de crédit -->
+                <div class="card-section" id="cardSection">
+                    <h3 class="card-title">Carte de Crédit</h3>
+                    <p class="card-subtitle">Rentrer vos informations</p>
+
+                    <!-- Numéro de carte -->
+                    <div class="form-group">
+                        <label for="cardNumber" class="form-label">Numéro de carte</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="cardNumber" name="cardNumber" class="form-input" placeholder="1234 5678 9023 4567" maxlength="19" required>
+                            <img src="../img/visa-G.png" alt="Visa" class="input-icon">
+                        </div>
+                    </div>
+
+                    <!-- Titulaire -->
+                    <div class="form-group">
+                        <label for="cardHolder" class="form-label">Titulaire de la carte</label>
+                        <input type="text" id="cardHolder" name="cardHolder" class="form-input" placeholder="Leroy Thomas" required>
+                    </div>
+
+                    <!-- Expiration et CVV -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiration" class="form-label">Expiration</label>
+                            <input type="text" id="expiration" name="expiration" class="form-input" placeholder="07/28" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" id="cvv" name="cvv" class="form-input" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PayPal -->
+                <div class="paypal-section" id="paypalSection" style="display: none;">
+                    <h3 class="card-title">PayPal</h3>
+                    <p class="card-subtitle">Rentrer vos informations</p>
+
+                    <!-- Email PayPal -->
+                    <div class="form-group">
+                        <label for="paypalEmail" class="form-label">Adresse Mail</label>
+                        <input type="email" id="paypalEmail" name="paypalEmail" class="form-input" placeholder="noahemboule@gmail.com">
+                    </div>
+
+                    <!-- Mot de passe PayPal -->
+                    <div class="form-group">
+                        <label for="paypalPassword" class="form-label">Mot de passe</label>
+                        <input type="password" id="paypalPassword" name="paypalPassword" class="form-input" placeholder="••••••••••••">
+                    </div>
+                </div>
+
+                <!-- Apple Pay -->
+                <div class="applepay-section" id="applepaySection" style="display: none;">
+                    <h3 class="card-title">Apple Pay</h3>
+                </div>
+
+                <!-- Bouton de paiement -->
+                <button type="submit" class="btn-payer" id="payButton">Payer</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Popup de confirmation -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <img src="../img/paiement.png" alt="Paiement confirmé" class="check-icon">
+                <h2 class="popup-title">Paiement confirmé</h2>
+            </div>
+            
+            <p class="popup-text">Merci pour ta commande</p>
+            <p class="popup-text">Ton paiement a bien été validé.</p>
+            
+            <p class="popup-order"><strong>Commande n° 458732</strong></p>
+            
+            <p class="popup-email">Tu vas recevoir un e-mail de confirmation à l'adresse <strong id="confirmEmail">leroythomas@gmail.com</strong>.</p>
+            
+            <p class="popup-tracking">Tu peux suivre l'avancement de ta livraison à tout moment depuis ton compte.</p>
+            
+            <button class="btn-popup" id="btnSuivreCommande">Suivre ma commande</button>
+        </div>
+    </div>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="../js/paiement.js"></script>
+</body>
+</html>

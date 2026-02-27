@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCNT - Connexion</title>
+    
+    <!-- Google Fonts - Montserrat + Cormorant Garamond -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="../css/connexion.css">
+</head>
+<body style="opacity: 0;">
+    <!-- Container principal de l'application -->
+    <div class="app-container">
+        
+        <!-- Header avec le logo et titre -->
+        <header class="header">
+            <a href="accueil.html" class="logo-link">
+                <img src="../img/logo.png" alt="SCNT Logo" class="logo">
+            </a>
+            <h1 class="page-title">Bienvenue</h1>
+        </header>
+
+        <!-- Container du formulaire de connexion -->
+        <div class="connexion-container">
+            
+            <h2 class="form-title">Crée ton compte !</h2>
+
+            <!-- Formulaire d'inscription -->
+            <form class="connexion-form" id="connexionForm">
+                
+                <!-- Nom -->
+                <div class="form-group">
+                    <label for="nom" class="form-label">Nom</label>
+                    <input type="text" id="nom" name="nom" class="form-input" placeholder="Emboulé" required>
+                </div>
+
+                <!-- Prénom -->
+                <div class="form-group">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" class="form-input" placeholder="Noah" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Adresse mail</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="noahemboule@gmail.com" required>
+                </div>
+
+                <!-- Téléphone -->
+                <div class="form-group">
+                    <label for="telephone" class="form-label">Numéro de téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" class="form-input" placeholder="+33 6 74 53 09 93" required>
+                </div>
+
+                <!-- Mot de passe -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="••••••••••••" required>
+                </div>
+
+                <!-- Conditions générales -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="conditions" name="conditions" required>
+                        <span class="custom-checkbox"></span>
+                        <span class="checkbox-text">J'accepte les conditions générales d'utilisation</span>
+                    </label>
+                </div>
+
+                <!-- Bouton de soumission -->
+                <button type="submit" class="btn-submit" disabled>Créer mon compte</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar Fixe -->
+    <nav class="bottom-navbar">
+        <!-- Bouton Questionnaire -->
+        <button class="nav-btn" data-nav="questionnaire" aria-label="Questionnaire">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-questionnaire-B.png" alt="Questionnaire" class="icon-inactive">
+            <img src="../img/icon-questionnaire-R.png" alt="Questionnaire" class="icon-active">
+        </button>
+        
+        <!-- Bouton Accueil -->
+        <button class="nav-btn" data-nav="accueil" aria-label="Accueil">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-maison-B.png" alt="Accueil" class="icon-inactive">
+            <img src="../img/icon-maison-R.png" alt="Accueil" class="icon-active">
+        </button>
+        
+        <!-- Bouton Profil -->
+        <button class="nav-btn active" data-nav="profil" aria-label="Profil">
+            <span class="nav-circle"></span>
+            <img src="../img/icon-conexion-B.png" alt="Profil" class="icon-inactive">
+            <img src="../img/icon-conexion-R.png" alt="Profil" class="icon-active">
+        </button>
+    </nav>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="../js/connexion.js"></script>
+</body>
+</html>
