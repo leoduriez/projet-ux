@@ -161,14 +161,14 @@ navBtns.forEach(btn => {
    ======================================== */
 
 // Données des parfums
-const perfumeData = {
+const perfumes = {
     1: {
         name: 'Fruité & doux',
         images: [
-            '../img/pop-up-1.png',
-            '../img/pop-up-2.png',
-            '../img/pop-up-3.png',
-            '../img/pop-up-4.png'
+            '../img/pop-up-1.webp',
+            '../img/pop-up-2.webp',
+            '../img/pop-up-3.webp',
+            '../img/pop-up-4.webp'
         ],
         notes: {
             head: 'Fruité et gourmand → Pêche, fruits rouges, poire douce',
@@ -179,29 +179,29 @@ const perfumeData = {
     2: {
         name: 'Frais & Pétillant',
         images: [
-            '../img/pop-up-1.png',
-            '../img/pop-up-2.png',
-            '../img/pop-up-3.png',
-            '../img/pop-up-4.png'
+            '../img/pop-up-1.webp',
+            '../img/pop-up-2.webp',
+            '../img/pop-up-3.webp',
+            '../img/pop-up-4.webp'
         ],
         notes: {
             head: 'Agrumes et vivifiant → Citron, bergamote, orange sanguine',
-            heart: 'Aquatique et frais → Notes marines, thé vert, menthe',
-            base: 'Léger et aérien → Cèdre blanc, musc léger, ambre gris'
+            heart: 'Aquatique et frais → Notes marines, thé vert, menthe légère',
+            base: 'Boisé et léger → Cèdre blanc, vétiver frais'
         }
     },
     3: {
         name: 'Ambré & Chaud',
         images: [
-            '../img/pop-up-1.png',
-            '../img/pop-up-2.png',
-            '../img/pop-up-3.png',
-            '../img/pop-up-4.png'
+            '../img/pop-up-1.webp',
+            '../img/pop-up-2.webp',
+            '../img/pop-up-3.webp',
+            '../img/pop-up-4.webp'
         ],
         notes: {
             head: 'Épicé et chaleureux → Cannelle, cardamome, safran',
-            heart: 'Boisé et profond → Santal, cèdre, patchouli',
-            base: 'Ambré et sensuel → Ambre, vanille bourbon, musc'
+            heart: 'Boisé et profond → Santal, patchouli, oud',
+            base: 'Ambré et enveloppant → Ambre gris, vanille bourbon, musc'
         }
     }
 };
