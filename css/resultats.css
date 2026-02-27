@@ -1,4 +1,14 @@
 /* ========================================
+   FONT FACE - Typo personnalisée
+   ======================================== */
+@font-face {
+    font-family: 'Tan Pearl';
+    src: url('../fonts/tan-pearl.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ========================================
    VARIABLES CSS - Palette de couleurs
    ======================================== */
 :root {
@@ -93,7 +103,7 @@ body {
 }
 
 .page-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Tan Pearl', 'Cormorant Garamond', serif;
     font-size: 40px;
     font-weight: 400;
     font-style: italic;
