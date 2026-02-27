@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.opacity = '1';
 });
 
+// Réinitialiser l'opacité lors du retour arrière
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted || performance.getEntriesByType('navigation')[0].type === 'back_forward') {
+        document.body.style.opacity = '1';
+        if (document.querySelector('.app-container')) {
+            document.querySelector('.app-container').style.opacity = '1';
+            document.querySelector('.app-container').style.transform = 'translateY(0)';
+        }
+    }
+});
+
 /* ========================================
    GESTION DU CHECKBOX ET BOUTON
    ======================================== */

@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.opacity = '1';
 });
 
+// Réinitialiser l'opacité lors du retour arrière
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted || performance.getEntriesByType('navigation')[0].type === 'back_forward') {
+        document.body.style.opacity = '1';
+    }
+});
+
 /* ========================================
    GESTION DE LA PAGE D'ACCUEIL
    ======================================== */
