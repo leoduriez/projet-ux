@@ -56,9 +56,9 @@ connexionForm.addEventListener('submit', (e) => {
     document.querySelector('.app-container').style.transform = 'translateY(20px)';
     document.querySelector('.app-container').style.transition = 'all 0.3s ease';
     
-    // Redirection vers la page d'accueil après inscription
+    // Redirection vers la page de paiement après inscription
     setTimeout(() => {
-        window.location.href = 'accueil.html';
+        window.location.href = 'paiement.html';
     }, 300);
 });
 
