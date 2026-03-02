@@ -298,37 +298,36 @@ body {
 }
 
 /* ========================================
-   BOUTON TOGGLE COFFRETS
+   BOUTON VOIR PLUS
    ======================================== */
-.btn-toggle-coffrets {
-    width: 100%;
-    padding: 15px 20px;
-    margin: 20px 0;
-    font-family: 'Tan Pearl', 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--noir);
-    background: transparent;
-    border: none;
-    cursor: pointer;
+.btn-voir-plus {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 10px 20px;
+    margin: 15px auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--noir);
+    background: #E8E8E8;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn-toggle-coffrets:hover {
-    color: var(--vieux-rose);
+.btn-voir-plus:hover {
+    background: #DADADA;
 }
 
-.toggle-icon {
-    font-size: 16px;
+.btn-voir-plus .toggle-icon {
+    font-size: 14px;
     transition: transform 0.3s ease;
 }
 
-.btn-toggle-coffrets.active .toggle-icon {
+.btn-voir-plus.active .toggle-icon {
     transform: rotate(180deg);
 }
 
