@@ -373,13 +373,14 @@ body {
     max-width: 250px;
     padding: 16px 32px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--noir);
     background-color: var(--rose-clair);
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 

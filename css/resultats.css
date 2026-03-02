@@ -218,6 +218,7 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -285,6 +286,7 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -315,6 +317,7 @@ body {
     border: none;
     border-radius: 25px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -395,6 +398,7 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -484,12 +488,12 @@ body {
 }
 
 .popup-notes p {
-font-family: 'Montserrat', sans-serif;
-font-size: 13px;
-font-weight: 400;
-color: var(--noir);
-line-height: 1.5;
-margin-left: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--noir);
+    line-height: 1.5;
+    margin-left: 15px;
 }
 
 .hidden-response {
@@ -501,18 +505,9 @@ margin-left: 15px;
 }
 
 .btn-close-popup {
-display: block;
-margin: 0 auto;
-padding: 12px 40px;
-font-family: 'Montserrat', sans-serif;
-font-size: 14px;
-font-weight: 500;
-color: var(--noir);
-background: var(--rose-clair);
-border: none;
-border-radius: 8px;
-cursor: pointer;
-transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    padding: 12px 40px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -521,6 +516,7 @@ transition: all 0.3s ease;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 

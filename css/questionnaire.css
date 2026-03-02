@@ -283,13 +283,12 @@ body {
     font-size: 14px;
     font-weight: 500;
     color: var(--noir);
-    background: #EFC4CB;
+    background: var(--rose-clair);
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    min-width: 93px;
-    height: 36px;
     display: none;
 }
 
