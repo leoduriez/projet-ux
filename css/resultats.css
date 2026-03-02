@@ -325,8 +325,8 @@ body {
 .btn-voir-plus .toggle-icon {
     width: 10px;
     height: 10px;
-    border-right: 2px solid var(--noir);
-    border-bottom: 2px solid var(--noir);
+    border-right: 1px solid var(--noir);
+    border-bottom: 1px solid var(--noir);
     transform: rotate(45deg);
     transition: transform 0.3s ease;
     margin-top: -3px;
