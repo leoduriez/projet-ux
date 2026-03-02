@@ -67,44 +67,27 @@ const answerLabels = {
 function displayResponses() {
     const responsesList = document.getElementById('responsesList');
     
-    if (Object.keys(answers).length === 0) {
-        // Afficher des réponses par défaut si aucune réponse n'est enregistrée
-        const defaultResponses = [
-            'Confortable et naturel',
-            'Un espace propre et lumineux',
-            'Libre'
-        ];
-        
-        const hiddenResponses = [
-            'Intrigue',
-            'Non',
-            'Frais et pétillant (agrumes, fraîcheur)',
-            'Fruité et doux',
-            'Ambrée et chaude'
-        ];
-        
-        // Afficher les 3 premières réponses
-        defaultResponses.forEach(response => {
-            const li = document.createElement('li');
-            li.textContent = response;
-            responsesList.appendChild(li);
-        });
-        
-        // Afficher les réponses cachées
-        hiddenResponses.forEach(response => {
-            const li = document.createElement('li');
-            li.textContent = response;
+    // Réponses par défaut
+    const allResponses = [
+        'Confortable et naturel',
+        'Un espace propre et lumineux',
+        'Libre',
+        'Intrigue',
+        'Non',
+        'Frais et pétillant (agrumes, fraîcheur)',
+        'Fruité et doux',
+        'Ambrée et chaude'
+    ];
+    
+    // Afficher toutes les réponses, les 3 premières visibles, les autres cachées
+    allResponses.forEach((response, index) => {
+        const li = document.createElement('li');
+        li.textContent = response;
+        if (index >= 3) {
             li.classList.add('hidden-response');
-            responsesList.appendChild(li);
-        });
-    } else {
-        // Afficher les vraies réponses
-        Object.values(answers).forEach(value => {
-            const li = document.createElement('li');
-            li.textContent = answerLabels[value] || value;
-            responsesList.appendChild(li);
-        });
-    }
+        }
+        responsesList.appendChild(li);
+    });
 }
 
 // Initialiser l'affichage des réponses
@@ -282,13 +265,15 @@ popupOverlay.addEventListener('click', (e) => {
    ======================================== */
 const btnCommander = document.querySelector('.btn-commander');
 
-btnCommander.addEventListener('click', () => {
-    // Animation de transition
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        window.location.href = 'connexion.html';
-    }, 300);
-});
+if (btnCommander) {
+    btnCommander.addEventListener('click', () => {
+        // Animation de transition
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            window.location.href = 'connexion.html';
+        }, 300);
+    });
+}
 
 /* ========================================
    TOGGLE RÉPONSES CACHÉES
