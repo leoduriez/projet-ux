@@ -63,11 +63,7 @@ function showSlide(index) {
 function updateButtonText() {
     const skipButtons = document.querySelectorAll('.btn-skip');
     skipButtons.forEach(btn => {
-        if (currentSlide === totalSlides - 1) {
-            btn.textContent = "C'est parti";
-        } else {
-            btn.textContent = "Passer";
-        }
+        btn.textContent = "Skip";
     });
 }
 
