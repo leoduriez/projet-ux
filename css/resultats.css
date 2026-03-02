@@ -304,7 +304,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 15px;
     padding: 10px 20px;
     margin: 15px auto;
     font-family: 'Montserrat', sans-serif;
