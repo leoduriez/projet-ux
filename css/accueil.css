@@ -161,6 +161,32 @@ body {
     letter-spacing: -0.04em;
 }
 
+/* Bouton En savoir plus */
+.btn-savoir-plus {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 12px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--noir);
+    background: var(--rose-clair);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-savoir-plus:hover {
+    background: #E5B5BD;
+    transform: translateY(-2px);
+}
+
+.btn-savoir-plus:active {
+    transform: translateY(0);
+}
+
 /* Container d'image */
 .savoir-faire-image {
     width: 100%;
