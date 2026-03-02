@@ -569,6 +569,54 @@ body {
     line-height: 1.6;
 }
 
+.popup-coffrets {
+    margin: 30px 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.coffrets-title {
+    font-family: 'Tan Pearl', 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--noir);
+    margin: 0 0 20px 0;
+}
+
+.coffrets-image {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 15px;
+    margin: 0 auto 15px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-explorer {
+    padding: 10px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blanc);
+    background: #EFC4CB;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-explorer:hover {
+    background: #E5B5BD;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-explorer:active {
+    transform: translateY(0);
+}
+
 .btn-popup {
     width: 100%;
     padding: 14px 20px;
