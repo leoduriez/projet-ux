@@ -1,4 +1,15 @@
 /* ========================================
+   ÉCRAN DE CHARGEMENT (SPLASH SCREEN)
+   ======================================== */
+window.addEventListener('load', () => {
+    const splashScreen = document.getElementById('splashScreen');
+    
+    setTimeout(() => {
+        splashScreen.classList.add('hidden');
+    }, 2000);
+});
+
+/* ========================================
    GESTION DU CARROUSEL D'ONBOARDING
    ======================================== */
 
