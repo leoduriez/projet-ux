@@ -323,12 +323,18 @@ body {
 }
 
 .btn-voir-plus .toggle-icon {
-    font-size: 14px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--noir);
+    border-bottom: 2px solid var(--noir);
+    transform: rotate(45deg);
     transition: transform 0.3s ease;
+    margin-top: -3px;
 }
 
 .btn-voir-plus.active .toggle-icon {
-    transform: rotate(180deg);
+    transform: rotate(-135deg);
+    margin-top: 3px;
 }
 
 /* ========================================
