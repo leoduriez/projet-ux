@@ -240,9 +240,23 @@ body {
 }
 
 .responses-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
     margin-bottom: 12px;
     font-size: 14px;
     color: var(--noir);
+}
+
+.responses-list li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/vectore.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
 }
 
 /* ========================================

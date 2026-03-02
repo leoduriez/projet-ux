@@ -25,7 +25,6 @@ const questionCards = document.querySelectorAll('.question-card');
 const progressFill = document.getElementById('progressFill');
 const currentQuestionText = document.getElementById('currentQuestion');
 const questionIndicator = document.getElementById('questionIndicator');
-const btnNext = document.getElementById('btnNext');
 const btnPrev = document.getElementById('btnPrev');
 
 // Fonction pour afficher une question spécifique
@@ -37,8 +36,17 @@ function showQuestion(questionNumber) {
         questionIndicator.textContent = 'Finalisation ...';
         progressFill.style.width = '100%';
         btnPrev.classList.add('visible');
-        btnNext.classList.add('active');
-        btnNext.textContent = 'Suivant';
+        
+        // Rediriger automatiquement vers la page des résultats après 1 seconde
+        setTimeout(() => {
+            localStorage.setItem('questionnaireAnswers', JSON.stringify(answers));
+            document.querySelector('.app-container').style.opacity = '0';
+            document.querySelector('.app-container').style.transform = 'translateY(20px)';
+            document.querySelector('.app-container').style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                window.location.href = 'resultats.html';
+            }, 300);
+        }, 1000);
         return;
     }
 
@@ -71,23 +79,9 @@ function showQuestion(questionNumber) {
         btnPrev.classList.remove('visible');
     }
 
-    // Vérifier si une réponse est déjà sélectionnée pour cette question
-    checkNextButton();
 }
 
-// Fonction pour vérifier si le bouton Suivant doit être activé
-function checkNextButton() {
-    const currentCard = document.querySelector(`.question-card[data-question="${currentQuestion}"]`);
-    const hasSelected = currentCard.querySelector('input[type="radio"]:checked');
-    
-    if (hasSelected) {
-        btnNext.classList.add('active');
-    } else {
-        btnNext.classList.remove('active');
-    }
-}
-
-// Gestion des changements sur les radio buttons
+// Gestion des changements sur les radio buttons - passage automatique à la question suivante
 document.addEventListener('change', (e) => {
     if (e.target.type === 'radio') {
         const questionCard = e.target.closest('.question-card');
@@ -97,35 +91,14 @@ document.addEventListener('change', (e) => {
         // Sauvegarder la réponse
         answers[`question${questionNum}`] = answerValue;
 
-        // Activer le bouton Suivant
-        btnNext.classList.add('active');
-    }
-});
-
-// Gestion du clic sur le bouton Suivant
-btnNext.addEventListener('click', () => {
-    // Vérifier si on est sur la page finale
-    const finalCard = document.querySelector('.question-card[data-question="final"]');
-    if (finalCard && finalCard.classList.contains('active')) {
-        // Sauvegarder les réponses et rediriger vers résultats
-        localStorage.setItem('questionnaireAnswers', JSON.stringify(answers));
-        
-        // Animation de transition
-        document.querySelector('.app-container').style.opacity = '0';
-        document.querySelector('.app-container').style.transform = 'translateY(20px)';
-        document.querySelector('.app-container').style.transition = 'all 0.3s ease';
-        
+        // Passer automatiquement à la question suivante après un court délai
         setTimeout(() => {
-            window.location.href = 'resultats.html';
+            if (currentQuestion < totalQuestions) {
+                showQuestion(currentQuestion + 1);
+            } else if (currentQuestion === totalQuestions) {
+                showQuestion('final');
+            }
         }, 300);
-        return;
-    }
-    
-    if (currentQuestion < totalQuestions) {
-        showQuestion(currentQuestion + 1);
-    } else if (currentQuestion === totalQuestions) {
-        // Afficher la page de finalisation
-        showQuestion('final');
     }
 });
 
