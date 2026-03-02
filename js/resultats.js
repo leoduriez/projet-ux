@@ -67,17 +67,25 @@ const answerLabels = {
 function displayResponses() {
     const responsesList = document.getElementById('responsesList');
     
-    // Réponses par défaut
-    const allResponses = [
-        'Confortable et naturel',
-        'Un espace propre et lumineux',
-        'Libre',
-        'Intrigue',
-        'Non',
-        'Frais et pétillant (agrumes, fraîcheur)',
-        'Fruité et doux',
-        'Ambrée et chaude'
-    ];
+    let allResponses = [];
+    
+    // Si des réponses existent dans le localStorage, les utiliser
+    if (Object.keys(answers).length > 0) {
+        // Convertir les réponses du questionnaire en texte lisible
+        allResponses = Object.values(answers).map(value => answerLabels[value] || value);
+    } else {
+        // Réponses par défaut si aucune réponse n'est enregistrée
+        allResponses = [
+            'Confortable et naturel',
+            'Un espace propre et lumineux',
+            'Libre',
+            'Intrigue',
+            'Non',
+            'Frais et pétillant (agrumes, fraîcheur)',
+            'Fruité et doux',
+            'Ambrée et chaude'
+        ];
+    }
     
     // Afficher toutes les réponses, les 3 premières visibles, les autres cachées
     allResponses.forEach((response, index) => {
