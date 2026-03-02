@@ -293,6 +293,45 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-restart:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   BOUTON TOGGLE COFFRETS
+   ======================================== */
+.btn-toggle-coffrets {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-family: 'Tan Pearl', 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--noir);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-toggle-coffrets:hover {
+    color: var(--vieux-rose);
+}
+
+.toggle-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-toggle-coffrets.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
 /* ========================================
    SECTION COFFRETS
    ======================================== */

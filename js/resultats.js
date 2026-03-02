@@ -272,3 +272,19 @@ btnCommander.addEventListener('click', () => {
         window.location.href = 'connexion.html';
     }, 300);
 });
+
+/* ========================================
+   TOGGLE SECTION COFFRETS
+   ======================================== */
+const btnToggleCoffrets = document.getElementById('btnToggleCoffrets');
+const coffrets = document.getElementById('coffrets-section');
+
+btnToggleCoffrets.addEventListener('click', () => {
+    if (coffrets.style.display === 'none') {
+        coffrets.style.display = 'block';
+        btnToggleCoffrets.classList.add('active');
+    } else {
+        coffrets.style.display = 'none';
+        btnToggleCoffrets.classList.remove('active');
+    }
+});
