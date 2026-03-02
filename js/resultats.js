@@ -295,12 +295,14 @@ btnCommander.addEventListener('click', () => {
    ======================================== */
 const btnToggleCoffrets = document.getElementById('btnToggleCoffrets');
 
-btnToggleCoffrets.addEventListener('click', () => {
-    const hiddenResponses = document.querySelectorAll('.hidden-response');
-    
-    hiddenResponses.forEach(response => {
-        response.classList.toggle('visible');
+if (btnToggleCoffrets) {
+    btnToggleCoffrets.addEventListener('click', () => {
+        const hiddenResponses = document.querySelectorAll('.hidden-response');
+        
+        hiddenResponses.forEach(response => {
+            response.classList.toggle('visible');
+        });
+        
+        btnToggleCoffrets.classList.toggle('active');
     });
-    
-    btnToggleCoffrets.classList.toggle('active');
-});
+}
