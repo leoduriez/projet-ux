@@ -113,15 +113,9 @@ document.addEventListener('click', (e) => {
         showSlide(dotIndex);
     }
     
-    // Clic sur bouton "Passer" ou "C'est parti"
+    // Clic sur bouton "Skip" : redirection vers accueil
     if (e.target.classList.contains('btn-skip')) {
-        if (currentSlide === totalSlides - 1) {
-            // Dernier slide : démarrer l'app
-            startApp();
-        } else {
-            // Autres slides : passer au suivant
-            nextSlide();
-        }
+        window.location.href = 'pages/accueil.html';
     }
     
     // Clic sur bouton "Commencer"
