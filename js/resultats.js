@@ -75,9 +75,26 @@ function displayResponses() {
             'Libre'
         ];
         
+        const hiddenResponses = [
+            'Intrigue',
+            'Non',
+            'Frais et pétillant (agrumes, fraîcheur)',
+            'Fruité et doux',
+            'Ambrée et chaude'
+        ];
+        
+        // Afficher les 3 premières réponses
         defaultResponses.forEach(response => {
             const li = document.createElement('li');
             li.textContent = response;
+            responsesList.appendChild(li);
+        });
+        
+        // Afficher les réponses cachées
+        hiddenResponses.forEach(response => {
+            const li = document.createElement('li');
+            li.textContent = response;
+            li.classList.add('hidden-response');
             responsesList.appendChild(li);
         });
     } else {
@@ -274,17 +291,21 @@ btnCommander.addEventListener('click', () => {
 });
 
 /* ========================================
-   TOGGLE SECTION COFFRETS
+   TOGGLE RÉPONSES CACHÉES
    ======================================== */
 const btnToggleCoffrets = document.getElementById('btnToggleCoffrets');
-const coffrets = document.getElementById('coffrets-section');
 
 btnToggleCoffrets.addEventListener('click', () => {
-    if (coffrets.style.display === 'none') {
-        coffrets.style.display = 'block';
-        btnToggleCoffrets.classList.add('active');
-    } else {
-        coffrets.style.display = 'none';
-        btnToggleCoffrets.classList.remove('active');
-    }
+    const hiddenResponses = document.querySelectorAll('.hidden-response');
+    const isActive = btnToggleCoffrets.classList.contains('active');
+    
+    hiddenResponses.forEach(response => {
+        if (isActive) {
+            response.style.display = 'none';
+        } else {
+            response.style.display = 'list-item';
+        }
+    });
+    
+    btnToggleCoffrets.classList.toggle('active');
 });

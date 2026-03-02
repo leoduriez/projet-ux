@@ -476,22 +476,41 @@ body {
     font-weight: 600;
     color: var(--noir);
     margin-top: 15px;
-    margin-bottom: 8px;
 }
 
 .popup-notes p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--noir);
-    line-height: 1.5;
-    margin-left: 15px;
+font-family: 'Montserrat', sans-serif;
+font-size: 13px;
+font-weight: 400;
+color: var(--noir);
+line-height: 1.5;
+margin-left: 15px;
+}
+
+.responses-list li::before {
+content: '✓';
+color: var(--noir);
+font-weight: bold;
+margin-right: 10px;
+}
+
+.hidden-response {
+display: none;
 }
 
 .btn-close-popup {
-    display: block;
-    margin: 0 auto;
-    padding: 12px 40px;
+display: block;
+margin: 0 auto;
+padding: 12px 40px;
+font-family: 'Montserrat', sans-serif;
+font-size: 14px;
+font-weight: 500;
+color: var(--noir);
+background: var(--rose-clair);
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s ease;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
