@@ -297,14 +297,9 @@ const btnToggleCoffrets = document.getElementById('btnToggleCoffrets');
 
 btnToggleCoffrets.addEventListener('click', () => {
     const hiddenResponses = document.querySelectorAll('.hidden-response');
-    const isActive = btnToggleCoffrets.classList.contains('active');
     
     hiddenResponses.forEach(response => {
-        if (isActive) {
-            response.style.display = 'none';
-        } else {
-            response.style.display = 'list-item';
-        }
+        response.classList.toggle('visible');
     });
     
     btnToggleCoffrets.classList.toggle('active');
