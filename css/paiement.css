@@ -584,14 +584,32 @@ body {
     margin: 0 0 20px 0;
 }
 
-.coffrets-image {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
+.coffrets-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 20px 0;
+    position: relative;
+    height: 200px;
+}
+
+.coffret-side {
+    width: 100px;
+    height: 180px;
+    object-fit: cover;
     border-radius: 15px;
-    margin: 0 auto 15px;
-    display: block;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    filter: blur(3px);
+    opacity: 0.6;
+}
+
+.coffret-main {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
 .btn-explorer {
