@@ -72,12 +72,7 @@ function displayResponses() {
         const defaultResponses = [
             'Confortable et naturel',
             'Un espace propre et lumineux',
-            'Libre',
-            'Intrigue',
-            'Non',
-            'Frais et pétillant (agrumes, fraîcheur)',
-            'Fruité et doux',
-            'Ambrée et chaude'
+            'Libre'
         ];
         
         defaultResponses.forEach(response => {
