@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     
     setTimeout(() => {
         splashScreen.classList.add('hidden');
-    }, 3200);
+    }, 2000);
 });
 
 /* ========================================
