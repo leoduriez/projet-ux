@@ -291,11 +291,19 @@ const btnToggleCoffrets = document.getElementById('btnToggleCoffrets');
 if (btnToggleCoffrets) {
     btnToggleCoffrets.addEventListener('click', () => {
         const hiddenResponses = document.querySelectorAll('.hidden-response');
+        const btnText = btnToggleCoffrets.querySelector('span:first-child');
         
         hiddenResponses.forEach(response => {
             response.classList.toggle('visible');
         });
         
         btnToggleCoffrets.classList.toggle('active');
+        
+        // Changer le texte du bouton
+        if (btnToggleCoffrets.classList.contains('active')) {
+            btnText.textContent = 'Voir moins';
+        } else {
+            btnText.textContent = 'Voir plus';
+        }
     });
 }
