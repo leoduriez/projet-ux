@@ -302,8 +302,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--blanc);
-    background: var(--vert-sauge);
+    color: var(--noir);
+    background: var(--rose-clair);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -326,13 +326,8 @@ body {
     pointer-events: auto;
 }
 
-.btn-prev:hover, .btn-next:hover {
+.btn-prev:hover, .btn-next:hover, .btn-termine:hover {
     background: #E5B5BD;
-    transform: translateY(-2px);
-}
-
-.btn-termine:hover {
-    background: #5a6347;
     transform: translateY(-2px);
 }
 
