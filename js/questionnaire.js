@@ -26,6 +26,7 @@ const progressFill = document.getElementById('progressFill');
 const currentQuestionText = document.getElementById('currentQuestion');
 const questionIndicator = document.getElementById('questionIndicator');
 const btnPrev = document.getElementById('btnPrev');
+const btnTermine = document.getElementById('btnTermine');
 
 // Fonction pour afficher une question spécifique
 function showQuestion(questionNumber) {
@@ -36,17 +37,7 @@ function showQuestion(questionNumber) {
         questionIndicator.textContent = 'Finalisation ...';
         progressFill.style.width = '100%';
         btnPrev.classList.add('visible');
-        
-        // Rediriger automatiquement vers la page des résultats après 1 seconde
-        setTimeout(() => {
-            localStorage.setItem('questionnaireAnswers', JSON.stringify(answers));
-            document.querySelector('.app-container').style.opacity = '0';
-            document.querySelector('.app-container').style.transform = 'translateY(20px)';
-            document.querySelector('.app-container').style.transition = 'all 0.3s ease';
-            setTimeout(() => {
-                window.location.href = 'resultats.html';
-            }, 300);
-        }, 1000);
+        btnTermine.classList.add('visible');
         return;
     }
 
@@ -78,6 +69,9 @@ function showQuestion(questionNumber) {
     } else {
         btnPrev.classList.remove('visible');
     }
+    
+    // Cacher le bouton Terminé sur les questions normales
+    btnTermine.classList.remove('visible');
 
 }
 
@@ -114,6 +108,18 @@ btnPrev.addEventListener('click', () => {
     if (currentQuestion > 1) {
         showQuestion(currentQuestion - 1);
     }
+});
+
+// Gestion du clic sur le bouton Terminé
+btnTermine.addEventListener('click', () => {
+    // Sauvegarder les réponses et rediriger vers la page résultats
+    localStorage.setItem('questionnaireAnswers', JSON.stringify(answers));
+    document.querySelector('.app-container').style.opacity = '0';
+    document.querySelector('.app-container').style.transform = 'translateY(20px)';
+    document.querySelector('.app-container').style.transition = 'all 0.3s ease';
+    setTimeout(() => {
+        window.location.href = 'resultats.html';
+    }, 300);
 });
 
 /* ========================================
